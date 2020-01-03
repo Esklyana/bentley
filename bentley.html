@@ -5,28 +5,33 @@
 	<title>BENTLEY ROOMS</title>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/x-icon" href="./img/favicon.png">
+	<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="./js/slick.js"></script>
+	<script type="text/javascript" src="./js/jquery.singlePageNav.min.js"></script>
+	<script src="./js/script.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
 </head>
 <body>
 	<header>
 		<nav class="menu">
 			<div class="block__logo">
-				<a href="https://bentleyflyingspur.ru/298B8014DA335621303DB1A76500A6DC/" target="_blank" class="logo"></a>
+				<a href="https://www.bentleymotors.com/ru/ru.html" target="_blank" class="logo"></a>
 				<div class="years"></div>
 			</div>
-			<div class="menu__block">
-				<a href="" class="menu__item">О событии</a>
-				<a href="" class="menu__item">новый flying spur</a>
-				<a href="" class="menu__item">Регистрация</a>
-				<a href="" class="menu__item">партнеры</a>
-				<a href="" class="menu__item">место проведения</a>
+			<div class="menu__block nav">
+				<a href="#event" class="menu__item">О событии</a>
+				<a href="#flyingSpur" class="menu__item">новый flying spur</a>
+				<a href="#registration" class="menu__item">Регистрация</a>
+				<a href="#partners" class="menu__item">партнеры</a>
+				<a href="#place" class="menu__item">место проведения</a>
 			</div>
-			<a href="" class="menu__icon"></a>
+			<a class="menu__icon"></a>
 		</nav>
 	</header>
 	<div class="mobile__door"></div>
 	<div class="door">
-		<div class="rooms">
+		<div class="rooms" id="event">
 			<div class="rooms__headline">
 				<h1>BENTLEY<br> ROOMS</h1>
 				<p>#BENTLEYROOMS</p>
@@ -40,7 +45,7 @@
 	        </div>
 		</div>
 	</div>
-	<div class="salon">
+	<div class="salon" id="flyingSpur">
 		<div class="salon__img1"></div>
 		<div class="salon__img2"></div>
 		<div class="salon__img3"></div>
@@ -55,21 +60,54 @@
 		</div>
 	</div>
 	<div class="button">
-		<a href="" class="button__toggle">Фотографии</a>
-		<a href="" class="button__toggle">Характеристики</a>
+		<a data-id="0" class="button__toggle">Фотографии</a>
+		<a data-id="1"class="button__toggle">Характеристики</a>
 	</div>
-	<div class="photo">
-		<a href="" class="arrow-l"></a>
-		<a href="" class="photo__img" style="background: url('./img/2019_bentley_img1.png')"></a>
-		<a href="" class="photo__img" style="background: url('./img/2019_bentley_img2.png')"></a>
-		<a href="" class="photo__img ipad" style="background: url('./img/2019_bentley_img3.png')"></a>
-		<a href="" class="photo__img ipad" style="background: url('./img/2019_bentley_img4.png')"></a>
-		<a href="" class="photo__img ipad" style="background: url('./img/2019_bentley_img5.png')"></a>
-		<a href="" class="photo__img brows" style="background: url('./img/2019_bentley_img6.png')"></a>
-		<a href="" class="photo__img brows" style="background: url('./img/2019_bentley_img7.png')"></a>
-		<a href="" class="arrow-r"></a>
+	<div class="photo button__block active" id="but-0">
+		<div class="photo__img">
+			<div style="background: url('./img/2019_bentley_img1.png');"></div>
+		</div>
+		<div class="photo__img">
+			<div style="background: url('./img/2019_bentley_img2.png');"></div>
+		</div>
+		<div class="photo__img">
+			<div style="background: url('./img/2019_bentley_img3.png');"></div>
+		</div>
+		<div class="photo__img">
+			<div style="background: url('./img/2019_bentley_img4.png');"></div>
+		</div>
+		<div class="photo__img">
+			<div style="background: url('./img/2019_bentley_img5.png');"></div>
+		</div>
+		<div class="photo__img">
+			<div style="background: url('./img/2019_bentley_img6.png');"></div>
+		</div>
+		<div class="photo__img">
+			<div style="background: url('./img/2019_bentley_img7.png');"></div>
+		</div>
+		<div class="photo__img">
+			<div style="background: url('./img/2019_bentley_img1.png');"></div>
+		</div>
+		<div class="photo__img">
+			<div style="background: url('./img/2019_bentley_img2.png');"></div>
+		</div>
+		<div class="photo__img">
+			<div style="background: url('./img/2019_bentley_img3.png');"></div>
+		</div>
+		<div class="photo__img">
+			<div style="background: url('./img/2019_bentley_img4.png');"></div>
+		</div>
+		<div class="photo__img">
+			<div style="background: url('./img/2019_bentley_img5.png');"></div>
+		</div>
+		<div class="photo__img">
+			<div style="background: url('./img/2019_bentley_img6.png');"></div>
+		</div>
+		<div class="photo__img">
+			<div style="background: url('./img/2019_bentley_img7.png');"></div>
+		</div>
 	</div>
-	<div class="characteristics">
+	<div class="characteristics button__block" id="but-1">
 		<div class="char__column-1">
 			<div class="char__line">
 				<span class="char__title">Конфигурация:</span>
@@ -123,7 +161,7 @@
 		</div>
 	</div>
 	<div class="registration">
-		<h2 class="reg__title">ЗАПИСЬ НА закрытый показ<br> нового Bentley FLYING SPUR</h2>
+		<h2 class="reg__title" id="registration">ЗАПИСЬ НА закрытый показ<br> нового Bentley FLYING SPUR</h2>
 		<p class="reg__text">Чтобы зарезервировать удобное для Вас время встречи, пожалуйста, заполните прилагаемую ниже форму:</p>
 		<form method="post" action="">
 			<div class="name">
@@ -181,40 +219,40 @@
 			</a>
 		</form>
 	</div>
-		<div class="partners__background">
+		<div class="partners__background" id="partners">
 			<h2 class="partners__title">Официальные партнеры</h2>
 			<div class="partners">
-				<a href="" class="partners_logo partner-logo-1" style="background: url('./img/partner_1.png')"></a>
-				<a href="" class="partners_logo partner-logo-2" style="background: url('./img/partner_2.png')"></a>
-				<a href="" class="partners_logo partner-logo-3" style="background: url('./img/partner_3.png')"></a>
-				<a href="" class="partners_logo partner-logo-4" style="background: url('./img/partner_4.png')"></a>
-				<a href="" class="partners_logo partner-logo-5" style="background: url('./img/partner_5.png')"></a>
+				<a href="https://aurrum.com/" target="_blank" class="partners_logo partner-logo-1" style="background: url('./img/partner_1.png')"></a>
+				<a href="http://residence-tverskaya.com/" target="_blank" class="partners_logo partner-logo-2" style="background: url('./img/partner_2.png')"></a>
+				<a href="https://oxecapital.ru/" target="_blank" class="partners_logo partner-logo-3" style="background: url('./img/partner_3.png')"></a>
+				<a href="https://www.centrsvet.ru/" target="_blank" class="partners_logo partner-logo-4" style="background: url('./img/partner_4.png')"></a>
+				<a href="http://www.oneginvodka.ru/" target="_blank" class="partners_logo partner-logo-5" style="background: url('./img/partner_5.png')"></a>
 			</div>
 		</div>
-		<h2 class="place__title">МЕСТО ПРОВЕДЕНИЯ</h2>
+		<h2 class="place__title" id="place">МЕСТО ПРОВЕДЕНИЯ</h2>
 		<p class="place__text">Пентхаус класса люкс с завораживающим панорамным видом на центр Москвы в новом элитном жилом комплексе <br> «Резиденция Тверская» по адресу: 2-я Брестская, д.6 (заезд с 1-й Брестской)</p>
-		<a href="" class="place__img"></a>
+		<a href="https://yandex.ru/maps/213/moscow/?ll=37.591189%2C55.770811&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fll%3D37.591190%252C55.770813%26spn%3D0.001000%252C0.001000%26text%3D%25D0%25A0%25D0%25BE%25D1%2581%25D1%2581%25D0%25B8%25D1%258F%252C%2520%25D0%259C%25D0%25BE%25D1%2581%25D0%25BA%25D0%25B2%25D0%25B0%252C%25202-%25D1%258F%2520%25D0%2591%25D1%2580%25D0%25B5%25D1%2581%25D1%2582%25D1%2581%25D0%25BA%25D0%25B0%25D1%258F%2520%25D1%2583%25D0%25BB%25D0%25B8%25D1%2586%25D0%25B0%252C%25206%2520&z=17" target="_blank" class="place__img"></a>
 		<footer>
 			<p class="questions__title">МЫ ВСЕГДА ГОТОВЫ ОТВЕТИТЬ НА ВАШИ ВОПРОСЫ:</p>
 			<div class="questions__text">
 				<div class="href">
 					<p class="href__title">CALL-ЦЕНТР BENTLEY rooms</p>
-					<a href="tel:" class="href__text">8 800 777 83 83</a>
+					<a href="tel:88007778383" class="href__text">8 800 777 83 83</a>
 				</div>
 				<div class="href">
 					<p class="href__title">Адрес электронной почты</p>
-					<a href="mailto:"class="href__text">INFO@BENTLEYROOMS.RU</a>
+					<a href="mailto:info@bentleyrooms.ru"class="href__text">INFO@BENTLEYROOMS.RU</a>
 				</div>
 				<div class="href">
-					<a href="" class="site__title">Russia.BentleyMotors.com</a>
+					<a href="https://www.bentleymotors.com/ru/ru.html" target="_blank" class="site__title">Russia.BentleyMotors.com</a>
 					<p class="site__text">© Copyright Bentley Motors 2019</p>
 				</div>
 			</div>
 			<div class="footer">
 				<div class="footer__wrap">
 					<div class="network">
-						<a href="" class="inst"></a>
-						<a href="" class="facebook"></a>
+						<a href="https://www.instagram.com/bentleymotors_russia/" target="_blank" class="inst"></a>
+						<a href="https://www.facebook.com/BentleyMotorsRU/" target="_blank" class="facebook"></a>
 					</div>
 					<p>Bentley Motors Limited, регистрационный номер 0092897. Офис зарегистрирован: Bentley Motors Limited, Pyms Lane, Crewe Cheshire, CW1 3PL.</p>
 					<p>©2019 Bentley Motors Limited, все права защищены</p>
